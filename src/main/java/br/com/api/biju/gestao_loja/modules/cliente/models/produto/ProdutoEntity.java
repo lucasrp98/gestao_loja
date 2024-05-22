@@ -5,7 +5,9 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @AllArgsConstructor
@@ -27,6 +29,9 @@ public class ProdutoEntity {
     private List<Peca> peca;
 
     @Column(name = "peca_id")
-    private int pecaID;
+    private List <Integer> pecaID;
+
+    @CreationTimestamp
+    private LocalDateTime createdAt;
 
 }

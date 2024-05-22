@@ -3,6 +3,9 @@ package br.com.api.biju.gestao_loja.modules.cliente.models.peca;
 import br.com.api.biju.gestao_loja.modules.cliente.models.produto.ProdutoEntity;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
@@ -16,5 +19,7 @@ public abstract class Peca {
     private double custo;
     @ManyToOne
     private ProdutoEntity produto;
+    @CreationTimestamp
+    private LocalDateTime createdAt;
 
 }
