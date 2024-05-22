@@ -1,7 +1,7 @@
-package br.com.api.biju.gestao_loja.modules.cliente.useCases;
+package br.com.api.biju.gestao_loja.modules.cliente.useCases.cliente;
 
 import br.com.api.biju.gestao_loja.modules.cliente.exceptions.UserFoundException;
-import br.com.api.biju.gestao_loja.modules.cliente.models.ClienteEntity;
+import br.com.api.biju.gestao_loja.modules.cliente.models.cliente.ClienteEntity;
 import br.com.api.biju.gestao_loja.modules.cliente.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

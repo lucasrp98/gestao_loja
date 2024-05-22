@@ -1,8 +1,7 @@
-package br.com.api.biju.gestao_loja.modules.cliente.models;
+package br.com.api.biju.gestao_loja.modules.cliente.models.cliente;
 
 import java.time.LocalDateTime;
 import java.util.Date;
-import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
