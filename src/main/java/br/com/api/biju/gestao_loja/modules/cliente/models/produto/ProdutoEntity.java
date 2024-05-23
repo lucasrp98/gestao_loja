@@ -24,12 +24,14 @@ public class ProdutoEntity {
     private double preco;
     private double custo;
 
-    @OneToMany
-    @JoinColumn(name = "peca_id")
+    @ManyToMany
+    @JoinTable(name = "produto_has_pecas", joinColumns =
+            {@JoinColumn(name = "produto_id")}, inverseJoinColumns =
+            {@JoinColumn(name = "peca_id")})
     private List<Peca> peca;
 
     @Column(name = "peca_id")
-    private List <Integer> pecaID;
+    private List<Integer> pecaID;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

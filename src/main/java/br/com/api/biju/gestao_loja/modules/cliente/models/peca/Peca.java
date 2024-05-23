@@ -6,6 +6,7 @@ import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
@@ -17,8 +18,9 @@ public abstract class Peca {
     private String nome;
     private int estoque;
     private double custo;
-    @ManyToOne
-    private ProdutoEntity produto;
+    @ManyToMany(mappedBy = "peca")
+    private List<ProdutoEntity> produtoEntityList;
+    private List<Integer> produtoID;
     @CreationTimestamp
     private LocalDateTime createdAt;
 
