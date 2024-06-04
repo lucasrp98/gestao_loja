@@ -1,6 +1,6 @@
 package br.com.api.biju.gestao_loja.modules.cliente.models.produto;
 
-import br.com.api.biju.gestao_loja.modules.cliente.models.peca.Peca;
+import br.com.api.biju.gestao_loja.modules.cliente.models.peca.PecaEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,14 +24,10 @@ public class ProdutoEntity {
     private double preco;
     private double custo;
 
-    @ManyToMany
-    @JoinTable(name = "produto_has_pecas", joinColumns =
-            {@JoinColumn(name = "produto_id")}, inverseJoinColumns =
-            {@JoinColumn(name = "peca_id")})
-    private List<Peca> peca;
-
-    @Column(name = "peca_id")
-    private List<Integer> pecaID;
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinTable(name = "produto_has_pecas", joinColumns = @JoinColumn(name = "produto_id"),
+            inverseJoinColumns = @JoinColumn(name = "peca_id"))
+    private List<PecaEntity> peca;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

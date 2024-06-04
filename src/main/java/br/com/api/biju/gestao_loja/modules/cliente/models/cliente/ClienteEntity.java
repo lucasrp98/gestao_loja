@@ -4,10 +4,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -19,7 +16,8 @@ import org.hibernate.annotations.CreationTimestamp;
 @Entity(name = "cliente")
 public class ClienteEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente_seq")
+    @SequenceGenerator(name = "peca_seq", sequenceName = "cliente_seq", allocationSize = 1)
     private int id;
     @NotBlank(message = "O nome é obrigatório")
     @Size(max = 100, message = "O nome deve ter no máximo 100 caracteres")
