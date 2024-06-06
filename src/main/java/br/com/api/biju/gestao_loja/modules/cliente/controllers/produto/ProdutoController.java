@@ -1,7 +1,7 @@
-package br.com.api.biju.gestao_loja.modules.cliente.controllers.peca;
+package br.com.api.biju.gestao_loja.modules.cliente.controllers.produto;
 
-import br.com.api.biju.gestao_loja.modules.cliente.models.peca.PecaCordaEntity;
-import br.com.api.biju.gestao_loja.modules.cliente.useCases.peca.CreatePecaUseCase;
+import br.com.api.biju.gestao_loja.modules.cliente.models.produto.ProdutoEntity;
+import br.com.api.biju.gestao_loja.modules.cliente.useCases.produto.CreateProdutoUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,20 +10,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/pecacorda")
-public class PecaCordaController {
+@RequestMapping("/produto")
+public class ProdutoController {
 
     @Autowired
-    private CreatePecaUseCase createPecaUseCase;
+    CreateProdutoUseCase createProdutoUseCase;
 
-    @PostMapping("/")
-    public ResponseEntity<Object> create(@RequestBody PecaCordaEntity pecaCordaEntity) {
+    @PostMapping("/create")
+    public ResponseEntity<Object> createProduct(@RequestBody ProdutoEntity produtoEntity) {
         try {
-            var response = this.createPecaUseCase.execute(pecaCordaEntity);
+            var response = this.createProdutoUseCase.execute(produtoEntity);
             return ResponseEntity.ok().body(response);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
-
     }
 }

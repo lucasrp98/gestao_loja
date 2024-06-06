@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CreatePecaCordaUseCase {
+public class CreatePecaUseCase {
 
     @Autowired
     private PecaRepository pecaRepository;

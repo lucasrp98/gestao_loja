@@ -17,7 +17,7 @@ import org.hibernate.annotations.CreationTimestamp;
 public class ClienteEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente_seq")
-    @SequenceGenerator(name = "peca_seq", sequenceName = "cliente_seq", allocationSize = 1)
+    @SequenceGenerator(name = "cliente_seq", sequenceName = "cliente_seq", allocationSize = 1)
     private int id;
     @NotBlank(message = "O nome é obrigatório")
     @Size(max = 100, message = "O nome deve ter no máximo 100 caracteres")
