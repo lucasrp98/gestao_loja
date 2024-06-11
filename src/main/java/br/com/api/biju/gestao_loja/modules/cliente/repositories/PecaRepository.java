@@ -8,4 +8,6 @@ import java.util.Optional;
 public interface PecaRepository extends JpaRepository<PecaEntity, Integer> {
 
     Optional<PecaEntity> findByNome(String nome);
+    Optional<PecaEntity> findById(Integer id);
+
 }

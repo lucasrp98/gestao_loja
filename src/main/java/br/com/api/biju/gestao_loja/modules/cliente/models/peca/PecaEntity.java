@@ -3,6 +3,7 @@ package br.com.api.biju.gestao_loja.modules.cliente.models.peca;
 import br.com.api.biju.gestao_loja.modules.cliente.models.produto.ProdutoEntity;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;

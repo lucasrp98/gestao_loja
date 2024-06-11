@@ -36,6 +36,7 @@ public class ProdutoEntity {
     @JoinTable(name = "produto_has_pecas", joinColumns = @JoinColumn(name = "produto_id"),
             inverseJoinColumns = @JoinColumn(name = "peca_id"))
     private List<PecaEntity> peca = new ArrayList<>();
+    private List<Integer> list_pecas;
 
 
     @CreationTimestamp
