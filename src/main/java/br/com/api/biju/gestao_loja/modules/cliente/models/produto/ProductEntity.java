@@ -1,6 +1,6 @@
 package br.com.api.biju.gestao_loja.modules.cliente.models.produto;
 
-import br.com.api.biju.gestao_loja.modules.cliente.models.peca.PecaEntity;
+import br.com.api.biju.gestao_loja.modules.cliente.models.peca.PieceEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
@@ -18,7 +18,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Entity(name = "produto")
-public class ProdutoEntity {
+public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "produto_seq")
     @SequenceGenerator(name = "produto_seq", sequenceName = "produto_seq", allocationSize = 1)
@@ -35,7 +35,7 @@ public class ProdutoEntity {
     @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinTable(name = "produto_has_pecas", joinColumns = @JoinColumn(name = "produto_id"),
             inverseJoinColumns = @JoinColumn(name = "peca_id"))
-    private List<PecaEntity> peca = new ArrayList<>();
+    private List<PieceEntity> peca = new ArrayList<>();
     private List<Integer> list_pecas;
 
 

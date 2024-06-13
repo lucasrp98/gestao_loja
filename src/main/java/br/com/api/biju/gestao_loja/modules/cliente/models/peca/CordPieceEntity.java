@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Entity(name = "peca_corda")
-public class PecaCordaEntity extends PecaEntity {
+public class CordPieceEntity extends PieceEntity {
 
     @NotNull(message = "O comprimento é obrigatório")
     private double comprimento;

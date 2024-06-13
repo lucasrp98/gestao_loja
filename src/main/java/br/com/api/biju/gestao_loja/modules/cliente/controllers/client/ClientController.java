@@ -1,7 +1,7 @@
-package br.com.api.biju.gestao_loja.modules.cliente.controllers.cliente;
+package br.com.api.biju.gestao_loja.modules.cliente.controllers.client;
 
-import br.com.api.biju.gestao_loja.modules.cliente.models.cliente.ClienteEntity;
-import br.com.api.biju.gestao_loja.modules.cliente.useCases.cliente.CreateClienteUseCase;
+import br.com.api.biju.gestao_loja.modules.cliente.models.cliente.ClientEntity;
+import br.com.api.biju.gestao_loja.modules.cliente.useCases.cliente.CreateClientUseCase;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController 
 @RequestMapping("/cliente")
-public class ClienteController {
+public class ClientController {
 
     @Autowired
-    private CreateClienteUseCase createClienteUseCase;
+    private CreateClientUseCase createClientUseCase;
 
     @PostMapping("/")
-    public ResponseEntity<Object> create(@Valid @RequestBody ClienteEntity clienteEntity){
+    public ResponseEntity<Object> create(@Valid @RequestBody ClientEntity clientEntity){
         try {
-            var response = this.createClienteUseCase.execute(clienteEntity);
+            var response = this.createClientUseCase.execute(clientEntity);
             return ResponseEntity.ok().body(response);
         } catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());

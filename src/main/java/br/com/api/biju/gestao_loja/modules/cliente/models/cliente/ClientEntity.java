@@ -14,7 +14,7 @@ import org.hibernate.annotations.CreationTimestamp;
 @NoArgsConstructor
 @Data
 @Entity(name = "cliente")
-public class ClienteEntity {
+public class ClientEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente_seq")
     @SequenceGenerator(name = "cliente_seq", sequenceName = "cliente_seq", allocationSize = 1)

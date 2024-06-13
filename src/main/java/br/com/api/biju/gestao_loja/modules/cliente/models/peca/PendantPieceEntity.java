@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Entity(name = "peca_pingente")
-public class PecaPingenteEntity extends PecaEntity {
+public class PendantPieceEntity extends PieceEntity {
 
     @NotBlank(message = "O tipo de metal é obrigatório")
     private String metal;
