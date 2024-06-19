@@ -13,9 +13,10 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers("/produto/create").permitAll()
-                            .requestMatchers("/cliente").permitAll()
+                            .requestMatchers("/cliente/").permitAll()
                             .requestMatchers("/pecacorda").permitAll()
-                            .requestMatchers("/pecapingente/create").permitAll();
+                            .requestMatchers("/pecapingente/create").permitAll()
+                            .requestMatchers("/user/create").permitAll();
                     auth.anyRequest().authenticated();
                 });
         return http.build();

@@ -1,7 +1,8 @@
-package br.com.api.biju.gestao_loja.modules.cliente.controllers.client;
+package br.com.api.biju.gestao_loja.modules.cliente.controllers.user;
 
-import br.com.api.biju.gestao_loja.modules.cliente.models.people.ClientEntity;
-import br.com.api.biju.gestao_loja.modules.cliente.useCases.cliente.CreateClientUseCase;
+
+import br.com.api.biju.gestao_loja.modules.cliente.models.people.UserEntity;
+import br.com.api.biju.gestao_loja.modules.cliente.useCases.user.CreateUserUseCase;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,17 +11,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController 
-@RequestMapping("/cliente")
-public class ClientController {
-
+@RestController
+@RequestMapping("/user")
+public class UserController {
     @Autowired
-    private CreateClientUseCase createClientUseCase;
+    private CreateUserUseCase createUserUseCase;
 
-    @PostMapping("/")
-    public ResponseEntity<Object> create(@Valid @RequestBody ClientEntity clientEntity){
+    @PostMapping("/create")
+    public ResponseEntity<Object> create(@Valid @RequestBody UserEntity userEntity){
         try {
-            var response = this.createClientUseCase.execute(clientEntity);
+            var response = this.createUserUseCase.execute(userEntity);
             return ResponseEntity.ok().body(response);
         } catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());

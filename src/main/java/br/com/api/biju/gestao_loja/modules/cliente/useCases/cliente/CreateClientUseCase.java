@@ -1,8 +1,8 @@
 package br.com.api.biju.gestao_loja.modules.cliente.useCases.cliente;
 
 import br.com.api.biju.gestao_loja.modules.cliente.exceptions.ClientExceptions;
-import br.com.api.biju.gestao_loja.modules.cliente.models.cliente.ClientEntity;
-import br.com.api.biju.gestao_loja.modules.cliente.repositories.ClientRepository;
+import br.com.api.biju.gestao_loja.modules.cliente.models.people.ClientEntity;
+import br.com.api.biju.gestao_loja.modules.cliente.repositories.PeopleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,15 +10,15 @@ import org.springframework.stereotype.Service;
 public class CreateClientUseCase {
 
     @Autowired
-    private ClientRepository clientRepository;
+    private PeopleRepository peopleRepository;
 
     public ClientEntity execute(ClientEntity clientEntity){
-        this.clientRepository
+        this.peopleRepository
                 .findBycpf(clientEntity.getCpf())
                 .ifPresent((cliente) -> {
-                    throw new ClientExceptions.UserFoundException();
+                    throw new ClientExceptions.ClientFoundException();
                 });
-        return this.clientRepository.save(clientEntity);
+        return this.peopleRepository.save(clientEntity);
     }
 
 }

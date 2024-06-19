@@ -1,23 +1,26 @@
-package br.com.api.biju.gestao_loja.modules.cliente.models.cliente;
-
-import java.time.LocalDateTime;
-import java.util.Date;
+package br.com.api.biju.gestao_loja.modules.cliente.models.people;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 
-@AllArgsConstructor
+
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
-@Entity(name = "cliente")
-public class ClientEntity {
+public abstract class PeopleEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente_seq")
-    @SequenceGenerator(name = "cliente_seq", sequenceName = "cliente_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pessoa_seq")
+    @SequenceGenerator(name = "pessoa_seq", sequenceName = "pessoa_seq", allocationSize = 1)
     private int id;
     @NotBlank(message = "O nome é obrigatório")
     @Size(max = 100, message = "O nome deve ter no máximo 100 caracteres")
@@ -39,4 +42,3 @@ public class ClientEntity {
     @CreationTimestamp
     private LocalDateTime createdAt;
 }
-
