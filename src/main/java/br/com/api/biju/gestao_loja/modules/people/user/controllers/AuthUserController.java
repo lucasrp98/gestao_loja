@@ -25,7 +25,10 @@ public class AuthUserController {
         try {
             var result = this.authUserUseCase.execute(authUserDTO);
             return ResponseEntity.ok(result);
-        } catch (Exception e){
+
+        } catch (UserExceptions.UserNotFoundException e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("E-mail não encontrado");
+        }catch (Exception e){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("E-mail ou senha incorreto.");
         }
     }
