@@ -6,4 +6,11 @@ public class UserExceptions {
             super("Usuário já cadastrado");
         }
     }
+
+    public static class UserNotFoundException extends RuntimeException {
+        public UserNotFoundException() {
+            super("Usuário não encontrado");
+        }
+    }
+
 }

@@ -18,14 +18,16 @@ public class SecurityConfig {
                             .requestMatchers("/cliente/").permitAll()
                             .requestMatchers("/pecacorda").permitAll()
                             .requestMatchers("/pecapingente/create").permitAll()
-                            .requestMatchers("/user/create").permitAll();
+                            .requestMatchers("/user/create").permitAll()
+                            .requestMatchers("/auth/user").permitAll();
+
                     auth.anyRequest().authenticated();
                 });
         return http.build();
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 }
