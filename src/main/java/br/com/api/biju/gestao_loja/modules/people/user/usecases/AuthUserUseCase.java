@@ -13,6 +13,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.Duration;
+import java.time.Instant;
+
 @Service
 public class AuthUserUseCase {
     @Autowired
@@ -32,12 +35,13 @@ public class AuthUserUseCase {
         );
         var passwordMatches = passwordEncoder.matches(authUserDTO.getPassword(), user.getPassword());
 
-        if(!passwordMatches){
+        if (!passwordMatches) {
             throw new AuthenticationException("Senha incorreta");
         }
         Algorithm algorithm = Algorithm.HMAC256(secretKey);
         var token = JWT.create().withIssuer("dorabiju")
-               .withSubject(String.valueOf(user.getId()))
+                .withExpiresAt(Instant.now().plus(Duration.ofHours(2)))
+                .withSubject(String.valueOf(user.getId()))
                 .sign(algorithm);
         return token;
     }
