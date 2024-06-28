@@ -18,4 +18,6 @@ public class UserEntity extends PeopleEntity {
 
     @Length(message = "A senha deve conter no mínimo 8 caracterers")
     private String password;
+
+    private String user_type;
 }

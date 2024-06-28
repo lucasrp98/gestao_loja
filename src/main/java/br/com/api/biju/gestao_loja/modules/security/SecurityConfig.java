@@ -23,6 +23,7 @@ public class SecurityConfig {
                             .requestMatchers("/cliente/").permitAll()
                             .requestMatchers("/pecacorda").permitAll()
                             .requestMatchers("/pecapingente/create").permitAll()
+                            .requestMatchers("/user/create").permitAll()
                             .requestMatchers("/auth/user").permitAll();
                     auth.anyRequest().authenticated();
                 })
