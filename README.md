@@ -3,7 +3,7 @@
 <p align="center">🚀 
 Este projeto é desenvolvido em Java, utilizando o framework Spring Boot, com o objetivo de criar uma API para auxiliar na gestão de uma loja de acessórios femininos e masculinos. 🚀</p>
 
-<img src="https://img.shields.io/static/v1?label=Java&message=NuTads&color=7159c1&style=for-the-badge&logo=ghost"/>
+<img src="https://img.shields.io/static/v1?label=Java&message=Loja&color=7159c1&style=for-the-badge&logo=ghost"/>
 
 ### Pré-requisitos
 
