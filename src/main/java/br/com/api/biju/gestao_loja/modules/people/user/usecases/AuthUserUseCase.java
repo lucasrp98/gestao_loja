@@ -39,10 +39,10 @@ public class AuthUserUseCase {
             throw new AuthenticationException("Senha incorreta");
         }
         Algorithm algorithm = Algorithm.HMAC256(secretKey);
-        var expiresIn = Instant.now().plus(Duration.ofHours(2));
+        var expiresIn = Instant.now().plus(Duration.ofMinutes(10));
         var token = JWT.create().withIssuer("dorabiju")
                 .withExpiresAt(expiresIn)
-                .withSubject(String.valueOf(user.getId()))
+                .withSubject(String.valueOf(user.getUser_type()))
                 .withClaim("roles", Arrays.asList(user.getUser_type()))
                 .sign(algorithm);
 
