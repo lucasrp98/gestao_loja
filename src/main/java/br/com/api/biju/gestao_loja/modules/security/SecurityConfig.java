@@ -24,7 +24,9 @@ public class SecurityConfig {
                             .requestMatchers("/pecacorda").permitAll()
                             .requestMatchers("/pecapingente/create").permitAll()
                             .requestMatchers("/user/create").permitAll()
-                            .requestMatchers("/auth/user").permitAll();
+                            .requestMatchers("/auth/user").permitAll()
+                            .requestMatchers("/tipoproduto/create").permitAll();
+
                     auth.anyRequest().authenticated();
                 })
                 .addFilterBefore(securityFilter, BasicAuthenticationFilter.class)

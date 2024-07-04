@@ -26,8 +26,9 @@ public class ProductEntity {
     @NotBlank(message = "O nome é obrigatório")
     @Size(max = 100, message = "O nome deve ter no máximo 100 caracteres")
     private String nome;
-    @NotBlank(message = "O tipo do produto é obrigatório")
-    private String tipo_produto;
+    @ManyToOne
+    @JoinColumn(name = "tipo_produto_id", nullable = false)
+    private Type_ProductEntity tipo_produto;
     private int estoque;
     @DecimalMin(value = "0.1", inclusive = false, message = "O preço deve ser maior que 0")
     private double preco;
