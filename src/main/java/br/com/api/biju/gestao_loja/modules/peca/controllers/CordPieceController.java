@@ -1,6 +1,8 @@
 package br.com.api.biju.gestao_loja.modules.peca.controllers;
 
+import br.com.api.biju.gestao_loja.modules.peca.dto.CordPieceCreateDTO;
 import br.com.api.biju.gestao_loja.modules.peca.models.CordPieceEntity;
+import br.com.api.biju.gestao_loja.modules.peca.models.PieceEntity;
 import br.com.api.biju.gestao_loja.modules.peca.usecases.CreatePieceUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,9 +19,10 @@ public class CordPieceController {
     private CreatePieceUseCase createPieceUseCase;
 
     @PostMapping("/")
-    public ResponseEntity<Object> create(@RequestBody CordPieceEntity cordPieceEntity) {
+    public ResponseEntity<Object> create(@RequestBody CordPieceCreateDTO cordPieceCreateDTO) {
         try {
-            var response = this.createPieceUseCase.execute(cordPieceEntity);
+            PieceEntity pieceEntity = cordPieceCreateDTO.toCordPieceEntity();
+            var response = this.createPieceUseCase.execute(pieceEntity);
             return ResponseEntity.ok().body(response);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());

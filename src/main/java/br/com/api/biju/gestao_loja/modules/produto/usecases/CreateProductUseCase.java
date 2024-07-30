@@ -9,7 +9,6 @@ import br.com.api.biju.gestao_loja.modules.produto.models.ProductEntity;
 import br.com.api.biju.gestao_loja.modules.peca.repositories.PieceRepository;
 import br.com.api.biju.gestao_loja.modules.produto.models.Type_ProductEntity;
 import br.com.api.biju.gestao_loja.modules.produto.repositories.ProductRepository;
-import br.com.api.biju.gestao_loja.modules.peca.usecases.UpdatePieceUseCase;
 import br.com.api.biju.gestao_loja.modules.produto.repositories.Type_ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,9 +23,6 @@ public class CreateProductUseCase {
 
     @Autowired
     PieceRepository pieceRepository;
-
-    @Autowired
-    UpdatePieceUseCase updatePieceUseCase;
 
     @Autowired
     Type_ProductRepository typeProductRepository;
