@@ -12,13 +12,12 @@ public class CreateTypeProductUseCase {
     @Autowired
     Type_ProductRepository typeProductRepository;
 
-    public Type_ProductEntity execute (Type_ProductEntity typeProductEntity){
+    public Type_ProductEntity execute(Type_ProductEntity typeProductEntity){
         this.typeProductRepository
                 .findByNome(typeProductEntity.getNome())
                 .ifPresent((typeProduct) -> {
                     throw new ProductExceptions.TypeProductFoundException();
                 });
-        Type_ProductEntity typeProduct = this.typeProductRepository.save(typeProductEntity);
-        return typeProduct;
+        return this.typeProductRepository.save(typeProductEntity);
     }
 }

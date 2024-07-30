@@ -20,7 +20,7 @@ public class ProfileUserUseCase {
         var userDTO = ProfileUserResponseDTO.builder()
                 .name(user.getName())
                 .email(user.getEmail())
-                .user_type(user.getUser_type())
+                .user_type(String.valueOf(user.getUser_type()))
                 .build();
 
         return userDTO;

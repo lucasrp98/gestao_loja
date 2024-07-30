@@ -24,6 +24,7 @@ public class SecurityConfig {
                             .requestMatchers("/pecacorda/").permitAll()
                             .requestMatchers("/pecapingente/create").permitAll()
                             .requestMatchers("/user/create").permitAll()
+                            .requestMatchers("/tipouser/create").permitAll()
                             .requestMatchers("/auth/user").permitAll()
                             .requestMatchers("/tipoproduto/create").permitAll();
 

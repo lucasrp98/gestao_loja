@@ -13,4 +13,17 @@ public class UserExceptions {
         }
     }
 
+    public static class TypeUserFoundException extends RuntimeException {
+        public TypeUserFoundException() {
+            super("Tipo de usuário já cadastrado");
+        }
+    }
+
+    public static class TypeUserNotFoundException extends RuntimeException {
+        public TypeUserNotFoundException() {
+            super("Tipo de usuário não cadastrado cadastrado");
+        }
+    }
+
+
 }

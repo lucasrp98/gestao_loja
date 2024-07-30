@@ -1,6 +1,7 @@
 package br.com.api.biju.gestao_loja.modules.people.user.controllers;
 
 
+import br.com.api.biju.gestao_loja.modules.people.user.dto.UserCreateDTO;
 import br.com.api.biju.gestao_loja.modules.people.user.models.UserEntity;
 import br.com.api.biju.gestao_loja.modules.people.user.usecases.CreateUserUseCase;
 import br.com.api.biju.gestao_loja.modules.people.user.usecases.ProfileUserUseCase;
@@ -20,9 +21,9 @@ public class UserController {
     private ProfileUserUseCase profileUserUseCase;
 
     @PostMapping("/create")
-    public ResponseEntity<Object> create(@Valid @RequestBody UserEntity userEntity) {
+    public ResponseEntity<Object> create(@Valid @RequestBody UserCreateDTO userCreateDTO) {
         try {
-            var response = this.createUserUseCase.execute(userEntity);
+            var response = this.createUserUseCase.execute(userCreateDTO);
             return ResponseEntity.ok().body(response);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
