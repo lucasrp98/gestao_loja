@@ -1,14 +1,17 @@
 package br.com.api.biju.gestao_loja.modules.peca.models;
 
 import br.com.api.biju.gestao_loja.modules.produto.models.ProductEntity;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Data

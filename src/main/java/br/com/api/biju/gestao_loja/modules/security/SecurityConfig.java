@@ -21,7 +21,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers("/produto/create").permitAll()
                             .requestMatchers("/cliente/").permitAll()
-                            .requestMatchers("/pecacorda").permitAll()
+                            .requestMatchers("/pecacorda/").permitAll()
                             .requestMatchers("/pecapingente/create").permitAll()
                             .requestMatchers("/user/create").permitAll()
                             .requestMatchers("/auth/user").permitAll()

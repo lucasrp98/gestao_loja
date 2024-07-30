@@ -13,4 +13,10 @@ public class ProductExceptions {
             super("Tipo de produto já cadastrado");
         }
     }
+
+    public static class TypeProductNotFoundException extends RuntimeException {
+        public TypeProductNotFoundException() {
+            super("Tipo de produto não cadastrado");
+        }
+    }
 }

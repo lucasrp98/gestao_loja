@@ -8,5 +8,6 @@ import java.util.Optional;
 
 public interface Type_ProductRepository extends JpaRepository<Type_ProductEntity, Integer> {
     Optional<Type_ProductEntity> findByNome(String nome);
+    Optional<Type_ProductEntity> findById(Integer idTypeProduct);
 
 }

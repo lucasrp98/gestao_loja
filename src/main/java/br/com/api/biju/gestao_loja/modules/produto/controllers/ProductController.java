@@ -1,5 +1,6 @@
 package br.com.api.biju.gestao_loja.modules.produto.controllers;
 
+import br.com.api.biju.gestao_loja.modules.produto.dto.ProductCreationDTO;
 import br.com.api.biju.gestao_loja.modules.produto.models.ProductEntity;
 import br.com.api.biju.gestao_loja.modules.produto.usecases.CreateProductUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +18,9 @@ public class ProductController {
     CreateProductUseCase createProductUseCase;
 
     @PostMapping("/create")
-    public ResponseEntity<Object> createProduct(@RequestBody ProductEntity productEntity) {
+    public ResponseEntity<Object> createProduct(@RequestBody ProductCreationDTO productCreationDTO) {
         try {
-            var response = this.createProductUseCase.execute(productEntity);
+            var response = this.createProductUseCase.execute(productCreationDTO);
             return ResponseEntity.ok().body(response);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
