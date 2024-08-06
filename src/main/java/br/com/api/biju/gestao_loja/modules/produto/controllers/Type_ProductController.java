@@ -1,5 +1,6 @@
 package br.com.api.biju.gestao_loja.modules.produto.controllers;
 
+import br.com.api.biju.gestao_loja.modules.produto.dto.Type_ProductDTO;
 import br.com.api.biju.gestao_loja.modules.produto.models.ProductEntity;
 import br.com.api.biju.gestao_loja.modules.produto.models.Type_ProductEntity;
 import br.com.api.biju.gestao_loja.modules.produto.usecases.CreateTypeProductUseCase;
@@ -18,8 +19,9 @@ public class Type_ProductController {
     CreateTypeProductUseCase createTypeProductUseCase;
 
     @PostMapping("/create")
-    public ResponseEntity<Object> createProduct(@RequestBody Type_ProductEntity typeProductEntity) {
+    public ResponseEntity<Object> createProduct(@RequestBody Type_ProductDTO typeProductDTO) {
         try {
+            Type_ProductEntity typeProductEntity = typeProductDTO.toTypeProductEntity();
             var response = this.createTypeProductUseCase.execute(typeProductEntity);
             return ResponseEntity.ok().body(response);
         } catch (Exception e) {

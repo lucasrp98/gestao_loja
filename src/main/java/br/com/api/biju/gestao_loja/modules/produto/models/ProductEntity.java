@@ -41,7 +41,7 @@ public class ProductEntity {
     @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinTable(name = "produto_has_pecas", joinColumns = @JoinColumn(name = "produto_id"),
             inverseJoinColumns = @JoinColumn(name = "peca_id"))
-    private List<PieceEntity> peca = new ArrayList<>();
+    private List<PieceEntity> peca;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
