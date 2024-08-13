@@ -1,7 +1,6 @@
 package br.com.api.biju.gestao_loja.modules.people.user.repositories;
 
 import br.com.api.biju.gestao_loja.modules.people.user.models.Type_UserEntity;
-import br.com.api.biju.gestao_loja.modules.produto.models.Type_ProductEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

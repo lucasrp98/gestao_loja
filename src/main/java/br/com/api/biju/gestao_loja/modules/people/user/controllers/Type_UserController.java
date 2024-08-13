@@ -2,8 +2,7 @@ package br.com.api.biju.gestao_loja.modules.people.user.controllers;
 
 import br.com.api.biju.gestao_loja.modules.people.user.dto.CreateTypeUserDTO;
 import br.com.api.biju.gestao_loja.modules.people.user.models.Type_UserEntity;
-import br.com.api.biju.gestao_loja.modules.people.user.usecases.CreateTypeUserUseCase;
-import br.com.api.biju.gestao_loja.modules.produto.models.Type_ProductEntity;
+import br.com.api.biju.gestao_loja.modules.people.user.useCases.CreateTypeUserUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

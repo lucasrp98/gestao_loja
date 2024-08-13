@@ -7,4 +7,10 @@ public class ClientExceptions {
             super("Cliente já cadastrado");
         }
     }
+
+    public static class ClientNotFoundException extends RuntimeException {
+        public ClientNotFoundException() {
+            super("Client não cadastrado");
+        }
+    }
 }

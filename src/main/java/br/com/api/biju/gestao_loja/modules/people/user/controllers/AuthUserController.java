@@ -2,7 +2,7 @@ package br.com.api.biju.gestao_loja.modules.people.user.controllers;
 
 import br.com.api.biju.gestao_loja.modules.exceptions.UserExceptions;
 import br.com.api.biju.gestao_loja.modules.people.user.dto.AuthUserRequestDTO;
-import br.com.api.biju.gestao_loja.modules.people.user.usecases.AuthUserUseCase;
+import br.com.api.biju.gestao_loja.modules.people.user.useCases.AuthUserUseCase;
 import org.apache.tomcat.websocket.AuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

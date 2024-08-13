@@ -1,6 +1,5 @@
 package br.com.api.biju.gestao_loja.modules.people.user.dto;
 
-import br.com.api.biju.gestao_loja.modules.peca.models.CordPieceEntity;
 import br.com.api.biju.gestao_loja.modules.people.user.models.Type_UserEntity;
 import br.com.api.biju.gestao_loja.modules.people.user.models.UserEntity;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -8,7 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.validator.constraints.Length;
 
 import java.time.LocalDateTime;
 import java.util.Date;

@@ -2,9 +2,8 @@ package br.com.api.biju.gestao_loja.modules.people.user.controllers;
 
 
 import br.com.api.biju.gestao_loja.modules.people.user.dto.UserCreateDTO;
-import br.com.api.biju.gestao_loja.modules.people.user.models.UserEntity;
-import br.com.api.biju.gestao_loja.modules.people.user.usecases.CreateUserUseCase;
-import br.com.api.biju.gestao_loja.modules.people.user.usecases.ProfileUserUseCase;
+import br.com.api.biju.gestao_loja.modules.people.user.useCases.CreateUserUseCase;
+import br.com.api.biju.gestao_loja.modules.people.user.useCases.ProfileUserUseCase;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

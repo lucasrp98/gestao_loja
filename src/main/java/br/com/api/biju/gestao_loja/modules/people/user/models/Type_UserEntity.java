@@ -1,6 +1,5 @@
 package br.com.api.biju.gestao_loja.modules.people.user.models;
 
-import br.com.api.biju.gestao_loja.modules.peca.models.PieceEntity;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
