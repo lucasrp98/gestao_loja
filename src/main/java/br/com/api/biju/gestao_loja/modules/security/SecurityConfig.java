@@ -26,6 +26,8 @@ public class SecurityConfig {
                             .requestMatchers("/user/create").permitAll()
                             .requestMatchers("/tipouser/create").permitAll()
                             .requestMatchers("/auth/user").permitAll()
+                            .requestMatchers("/formapagamento/create").permitAll()
+                            .requestMatchers("/vendedor/create").permitAll()
                             .requestMatchers("/tipoproduto/create").permitAll();
 
                     auth.anyRequest().authenticated();

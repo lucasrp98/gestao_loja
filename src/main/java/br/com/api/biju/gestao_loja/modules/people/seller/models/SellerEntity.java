@@ -15,6 +15,6 @@ import lombok.NoArgsConstructor;
 @Entity(name = "vendedor")
 public class SellerEntity extends PeopleEntity {
     @ManyToOne
-    @JoinColumn(name = "venda_id", nullable = false)
+    @JoinColumn(name = "venda_id", nullable = true)
     private SaleEntity saleEntity;
 }

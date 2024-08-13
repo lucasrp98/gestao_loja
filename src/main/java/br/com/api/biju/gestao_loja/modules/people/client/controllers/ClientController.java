@@ -21,8 +21,7 @@ public class ClientController {
     @PostMapping("/")
     public ResponseEntity<Object> create(@Valid @RequestBody ClientCreateDTO clientCreateDTO){
         try {
-            ClientEntity clientEntity = clientCreateDTO.toClientEntity();
-            var response = this.createClientUseCase.execute(clientEntity);
+            var response = this.createClientUseCase.execute(clientCreateDTO);
             return ResponseEntity.ok().body(response);
         } catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());

@@ -41,10 +41,10 @@ public class SaleEntity {
     @JoinColumn(name = "cliente_id", nullable = false)
     private ClientEntity clientEntity;
     @ManyToOne
-    @JoinColumn(name = "tipo_forma_pagamento_id", nullable = false)
+    @JoinColumn(name = "form_pag_id", nullable = false)
     private Payment_MethodEntity paymentMethodEntity;
     @ManyToOne
-    @JoinColumn(name = "vendedor_id", nullable = false)
+    @JoinColumn(name = "vendedor_id", nullable = true)
     private SellerEntity sellerEntity;
     @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinTable(name = "produto_has_venda", joinColumns = @JoinColumn(name = "sale_id"),

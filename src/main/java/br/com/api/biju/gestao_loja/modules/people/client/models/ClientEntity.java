@@ -7,18 +7,19 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
+@NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity(name = "cliente")
 public class ClientEntity extends PeopleEntity {
-    @OneToMany(mappedBy = "venda_id")
+    @OneToMany(mappedBy = "clientEntity")
     @JsonManagedReference
-    private List<SaleEntity> vendas = new ArrayList<>();
+    private List<SaleEntity> vendas;
 }
 
 

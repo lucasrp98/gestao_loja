@@ -28,7 +28,7 @@ public class Payment_MethodEntity {
     @NotBlank(message = "O nome da forma de pagamento é obrigatório")
     @Size(max = 100, message = "O nome da forma de pagamento deve ter no máximo 100 caracteres")
     private String nome;
-    @OneToMany(mappedBy = "venda_id")
+    @OneToMany(mappedBy = "paymentMethodEntity")
     @JsonManagedReference
-    private List<SaleEntity> sales = new ArrayList<>();
+    private List<SaleEntity> sales;
 }
